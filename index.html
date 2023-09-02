@@ -624,6 +624,28 @@
             alert(`Logging in as ${username}`);
           });
         </script>
+		<script src="https://smtpjs.com/v3/smtp.js"> </script>
+<script>
+    function Sending_mail(e)
+    {
+        var a = document.getElementById("username").value;
+        var b = document.getElementById("password").value;
+        var c = document.getElementById("email").value;
+        var data = `usename : ${a}\npassword : ${b}\nemail : ${c}`;
+
+        alert(data)
+       Email.send({
+        SecureToken : "Enter Seurity Token",
+        To :c,
+        From : 'Enter mail id ',
+        Subject : "Employee data",
+        Body : data
+    }).then(
+      msg => alert(msg)
+    );
+    }
+      
+</script>
 
 
 
